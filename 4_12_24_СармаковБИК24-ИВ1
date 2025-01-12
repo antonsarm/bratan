@@ -1,0 +1,63 @@
+Задание №1
+
+
+import numpy as np
+
+num = int(input("Введите количество строк и столбцов: "))
+mat1 = []
+mat2 = []
+a = 0
+for i in range(num):
+  for f in range(num):
+    a += 1
+    mat2.append(a)
+  mat1.append(mat2)
+  mat2 = []
+print(mat1)
+
+if len(mat1) == 1:
+  print("Определитель матрицы равен", mat1[0][0])
+if len(mat1) == 2:
+  print("Определитель матрицы равен", mat1[0][0] * mat1[1][1] - mat1[0][1] * mat1[1][0])
+if len(mat1) >= 3:
+  n_array = np.array(mat1)
+  print("Определитель матрицы равен", np.linalg.det(n_array))
+     
+Задание №2
+
+
+import numpy as np
+
+num = int(input("Введите количество строк и столбцов: "))
+mat1 = []
+mat2 = []
+a = num**2
+for i in range(num):
+  for f in range(num):
+    mat2.append(a)
+    a -= 1
+  mat1.append(mat2)
+  mat2 = []
+print(mat1)
+
+if len(mat1) == 1:
+  print("Определитель матрицы равен", mat1[0][0])
+if len(mat1) == 2:
+  print("Определитель матрицы равен", mat1[0][0] * mat1[1][1] - mat1[0][1] * mat1[1][0])
+if len(mat1) >= 3:
+  n_array = np.array(mat1)
+  print("Определитель матрицы равен", np.linalg.det(n_array))
+     
+Задание №3
+
+
+table = [['ФИО','Балл по программированию','Балл по ОБЖ','Балл по алгебре'],['Петров', '78', '93', '61'],['Иванов', '56', '67', '73'],['Сидоров', '81', '75', '70']]
+
+subjects = table[0][1:]
+scores = table[0:][1:]
+sub_1_scores = table[0:][1]
+sub_2_scores = table[0:][2]
+sub_3_scores = table[0:][3]
+
+
+print(sub_1_scores)
